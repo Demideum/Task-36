@@ -1,0 +1,40 @@
+namespace Task_36
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            bool isWork = true;
+            string userInput;
+            int sumNumbers = 0;
+
+            List<int> numbers = new List<int>();
+
+            Console.WriteLine($"Добро пожаловать в Сумматор!\n\nВведите число которое хотите сложить;\nsum - для сложения чисел;\nexit - для выхода.");
+
+            while (isWork)
+            {
+                userInput = Console.ReadLine();
+
+                if (userInput == "exit")
+                {
+                    isWork = false;
+                    Console.WriteLine("Спасибо что были с нами! Ждем вас снова!");
+                }
+                else if (int.TryParse(userInput, out int number))
+                {
+                    numbers.Add(Convert.ToInt32(userInput));
+                }
+                else if (userInput == "sum")
+                {
+                    sumNumbers = numbers.Sum();
+                    Console.WriteLine($"Сумма чисел: {sumNumbers}");
+                }
+                else
+                {
+                    Console.WriteLine($"Проверьте правильность ввода.");
+                }
+            }
+        }
+    }
+}
