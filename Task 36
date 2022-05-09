@@ -23,7 +23,7 @@ namespace Task_36
                 }
                 else if (int.TryParse(userInput, out int number))
                 {
-                    numbers.Add(Convert.ToInt32(userInput));
+                    numbers.Add(number);
                 }
                 else if (userInput == "sum")
                 {
